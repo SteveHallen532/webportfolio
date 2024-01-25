@@ -41,6 +41,24 @@ const Projects = [
         '../assets/apps/appointment-nieves/desktop/pacientedietahistorial.png'],
         CarouselImgs: ['../assets/apps/appointment-nieves/carousel/23.png', '../assets/apps/appointment-nieves/carousel/24.png', '../assets/apps/appointment-nieves/carousel/25.png', '../assets/apps/appointment-nieves/carousel/26.png', '../assets/apps/appointment-nieves/carousel/27.png'],
     },
+    {
+        id: '3',
+        Title: 'Poker App y Retro App',
+        Subtitle: 'Herramientas para ceremonias de scrum poker planning y retrospective.',
+        Description: 'Realizada en Angular para desktop. Está conectada a una base de datos externa para el almacenamiento de información, lo que posibilita su uso desde cualquier dispositivo ingresando con nombre de usuario y contraseña.',
+        Url: '',
+        User:'',
+        Pass:'',
+        MovileImgs: [],
+        DeskTopImgs: ['../assets/apps/retroapp-pokerapp/desk/1.png', '../assets/apps/retroapp-pokerapp/desk/2.png', '../assets/apps/retroapp-pokerapp/desk/2.png',
+        '../assets/apps/retroapp-pokerapp/desk/4.png', '../assets/apps/retroapp-pokerapp/desk/5.png', '../assets/apps/retroapp-pokerapp/desk/6.png',
+        '../assets/apps/retroapp-pokerapp/desk/7.png', '../assets/apps/retroapp-pokerapp/desk/8.png', '../assets/apps/retroapp-pokerapp/desk/9.png',
+        '../assets/apps/retroapp-pokerapp/desk/10.png', '../assets/apps/retroapp-pokerapp/desk/11.png', '../assets/apps/retroapp-pokerapp/desk/12.png',
+        '../assets/apps/retroapp-pokerapp/desk/13.png', '../assets/apps/retroapp-pokerapp/desk/14.png', '../assets/apps/retroapp-pokerapp/desk/15.png',
+        '../assets/apps/retroapp-pokerapp/desk/16.png', '../assets/apps/retroapp-pokerapp/desk/17.png', '../assets/apps/retroapp-pokerapp/desk/18.png',
+        '../assets/apps/retroapp-pokerapp/desk/19.png'],
+        CarouselImgs: ['../assets/apps/retroapp-pokerapp/carousel/25.png', '../assets/apps/retroapp-pokerapp/carousel/26.png', '../assets/apps/retroapp-pokerapp/carousel/27.png', '../assets/apps/retroapp-pokerapp/carousel/28.png'],
+    },
 ];
 
 export const ProjectsService = {

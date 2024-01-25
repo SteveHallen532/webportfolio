@@ -4,9 +4,6 @@
             <v-col v-for="(item, index) in projects" :key="index" cols="12" md="4" xl="3" class="mb-10 mb-lg-0">
                 <ProjectThumbnail :url="'description?id=' + item.id" :title="item.Title" :description="item.Subtitle" :imgUrl="getImgUrl(index)" />
             </v-col>
-            <v-col v-for="(item, index) in projects" :key="index" cols="12" md="4" xl="3" class="mb-10">
-                <ProjectThumbnail :url="'description?id=' + item.id" :title="item.Title" :description="item.Subtitle" :imgUrl="getImgUrl(index)" />
-            </v-col>
         </v-row>
     </v-container>
 </template>
