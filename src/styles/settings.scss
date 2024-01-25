@@ -1,0 +1,43 @@
+/**
+ * src/styles/settings.scss
+ *
+ * Configures SASS variables and Vuetify overwrites
+ */
+
+// https://vuetifyjs.com/features/sass-variables/`
+// @use 'vuetify/settings' with (
+//   $color-pack: false
+// );
+a {
+    transition: color 0.5s;
+}
+.light {
+    padding: 5px;
+    border: solid 2px #5E35B1;
+    color: #5E35B1;
+    border-radius: 3px;
+    transition: background-color 0.5s, color 0.5s;
+}
+.light:hover {
+    background-color: #5E35B1;
+    color: white;
+}
+.dark{
+    padding: 5px;
+    background-color: #5E35B1;
+    color: white;
+    border-radius: 3px;
+    transition: background-color 0.5s;
+}
+.dark:hover {
+    background-color: #8872b4;
+}
+.purple-text {
+    color:#5E35B1;
+  }
+
+html {
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+}
