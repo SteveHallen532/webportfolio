@@ -69,7 +69,7 @@
                   <v-col cols="12" lg="6" xl="4" offset-xl="2" class="py-0 py-lg-3">
                     <p class="paragraph pb-0 pb-lg-3">Dejame un mensaje...</p>
                     <v-sheet class="mx-auto background-transparent">
-                      <v-form fast-fail action="https://formsubmit.co/cdd3d216aef4b06d3f8dd0c1c727713a" method="POST">
+                      <v-form fast-fail action="https://formsubmit.co/virginiayer@gmail.com" method="POST">
 
                         <v-text-field
                           variant="outlined"
@@ -97,8 +97,9 @@
 
                         <v-btn type="submit" block class="mt-2 btn-portfolio dark">Enviar</v-btn>
 
-                        <input type="hidden" name="_next" value="http://127.0.0.1:3000/">
-                        <input type="hidden">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_cc" value="virginiayer.test@gmail.com">
+                        <input type="hidden" name="_next" value="http://127.0.0.1:3000/success">
                       </v-form>
                     </v-sheet>
                   </v-col>

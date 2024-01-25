@@ -12,8 +12,8 @@
                     <p v-if="project.User">User: {{ project.User }}</p>
                     <p v-if="project.Pass">Password: {{ project.Pass }}</p>
                 </div>
-                <v-btn v-if="!mobile" class="dark mt-16 mr-4" @click="navigate('gallery?id=' + project.id + '&size=MovileImgs')">Galería MOBILE</v-btn>
-                <v-btn v-if="!mobile" class="dark mt-16" @click="navigate('gallery?id=' + project.id + '&size=DeskTopImgs')">Galeria DESKTOP</v-btn>
+                <v-btn v-if="!mobile && hasImg('MovileImgs')" class="dark mt-16 mr-4" @click="navigate('gallery?id=' + project.id + '&size=MovileImgs')">Galería MOBILE</v-btn>
+                <v-btn v-if="!mobile && hasImg('DeskTopImgs')" class="dark mt-16" @click="navigate('gallery?id=' + project.id + '&size=DeskTopImgs')">Galeria DESKTOP</v-btn>
             </v-col>
             <v-col cols="12" md="6" class="pt-0 pb-8">
 
@@ -32,10 +32,10 @@
                 </v-carousel>
 
             </v-col>
-            <v-col v-if="mobile" cols="6" class="text-center">
+            <v-col v-if="mobile && hasImg('MovileImgs')" cols="6" class="text-center">
                 <v-btn class="dark" @click="navigate('gallery?id=' + project.id + '&size=MovileImgs')">Galería MOBILE</v-btn>
             </v-col>
-            <v-col v-if="mobile" cols="6" class="text-center">
+            <v-col v-if="mobile && hasImg('DeskTopImgs')" cols="6" class="text-center">
                 <v-btn class="dark" @click="navigate('gallery?id=' + project.id + '&size=DeskTopImgs')">Galeria DESKTOP</v-btn>
             </v-col>
         </v-row>
@@ -56,6 +56,16 @@
     const mobile = ref(Boolean)
     
     //Functions
+    const hasImg = (str) => {
+        let arr;
+        if(str == 'DeskTopImgs') {
+            arr = [...project.value.DeskTopImgs]
+            return arr.length > 0;
+        } else if(str == 'MovileImgs') {
+            arr = [...project.value.MovileImgs]
+            return arr.length > 0;
+        }
+    }
     const getImgUrl = (i) => {
         return new URL(`${project.value.CarouselImgs[i]}`, import.meta.url).href
     }

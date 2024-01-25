@@ -52,11 +52,22 @@ const routes = [
       {
         path: '/gallery',
         name: 'Gallery',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Gallery.vue'),
+      },
+    ],
+  },
+  {
+    path: '/',
+    component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '/success',
+        name: 'SuccesPage',
         props: route => ({ query: route.query.id, query: route.query.size }),
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Gallery.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/SuccessPage.vue'),
       },
     ],
   }

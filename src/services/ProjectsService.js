@@ -17,6 +17,27 @@ const Projects = [
     },
     {
         id: '2',
+        Title: 'TURNOSApp',
+        Subtitle: 'Aplicación de gestión de turnos, registro de clientes, registro de pagos y más.',
+        Description: 'Realizada en Angular para mobile. Cuenta con dos versiones, una genérica pensada para profesionales de cualquier rubro y una especialmente diseñada para gimnasios. Permiten la autogestión de turnos por parte de los clientes o manual por el administrador. Cuenta además con secciones de información, anuncios y registro de pagos.',
+        Url: '',
+        User:'',
+        Pass:'',
+        MovileImgs: ['../assets/apps/turnosapp/cel/generic/admin/1.png', '../assets/apps/turnosapp/cel/generic/admin/2.png', '../assets/apps/turnosapp/cel/generic/admin/3.png',
+        '../assets/apps/turnosapp/cel/generic/admin/4.png', '../assets/apps/turnosapp/cel/generic/admin/5.png', '../assets/apps/turnosapp/cel/generic/admin/6.png',
+        '../assets/apps/turnosapp/cel/generic/admin/7.png', '../assets/apps/turnosapp/cel/generic/admin/8.png', '../assets/apps/turnosapp/cel/generic/client/1c.png', 
+        '../assets/apps/turnosapp/cel/generic/client/2c.png', '../assets/apps/turnosapp/cel/generic/client/3c.png', '../assets/apps/turnosapp/cel/generic/client/4c.png', '../assets/apps/turnosapp/cel/generic/client/5c.png', 
+        '../assets/apps/turnosapp/cel/gym/admin/1.png', '../assets/apps/turnosapp/cel/gym/admin/2.png', '../assets/apps/turnosapp/cel/gym/admin/3.png', '../assets/apps/turnosapp/cel/gym/admin/4.png', 
+        '../assets/apps/turnosapp/cel/gym/admin/5.png', '../assets/apps/turnosapp/cel/gym/admin/6.png', '../assets/apps/turnosapp/cel/gym/admin/7.png', '../assets/apps/turnosapp/cel/gym/admin/8.png', 
+        '../assets/apps/turnosapp/cel/gym/admin/9.png', '../assets/apps/turnosapp/cel/gym/admin/10.png', '../assets/apps/turnosapp/cel/gym/admin/11.png', '../assets/apps/turnosapp/cel/gym/admin/12.png', 
+        '../assets/apps/turnosapp/cel/gym/admin/13.png', '../assets/apps/turnosapp/cel/gym/admin/14.png', '../assets/apps/turnosapp/cel/gym/admin/15.png', '../assets/apps/turnosapp/cel/gym/atlete/1.png', 
+        '../assets/apps/turnosapp/cel/gym/atlete/2.png', '../assets/apps/turnosapp/cel/gym/atlete/3.png', '../assets/apps/turnosapp/cel/gym/atlete/4.png', '../assets/apps/turnosapp/cel/gym/atlete/5.png',
+        '../assets/apps/turnosapp/cel/gym/atlete/6.png', '../assets/apps/turnosapp/cel/gym/atlete/7.png', '../assets/apps/turnosapp/cel/gym/atlete/8.png'],
+        DeskTopImgs: [],
+        CarouselImgs: ['../assets/apps/turnosapp/carousel/25.png', '../assets/apps/turnosapp/carousel/26.png', '../assets/apps/turnosapp/carousel/27.png', '../assets/apps/turnosapp/carousel/28.png'],
+    },
+    {
+        id: '3',
         Title: 'Appointments App',
         Subtitle: 'Aplicación Web para gestión de consultorio de Nutrición',
         Description: 'Realizada en Angular, 100% resposiva. Está conectada a una base de datos externa para el almacenamiento de información, lo que posibilita su uso desde cualquier dispositivo ingresando con nombre de usuario y contraseña.',
@@ -42,7 +63,7 @@ const Projects = [
         CarouselImgs: ['../assets/apps/appointment-nieves/carousel/23.png', '../assets/apps/appointment-nieves/carousel/24.png', '../assets/apps/appointment-nieves/carousel/25.png', '../assets/apps/appointment-nieves/carousel/26.png', '../assets/apps/appointment-nieves/carousel/27.png'],
     },
     {
-        id: '3',
+        id: '4',
         Title: 'Poker App y Retro App',
         Subtitle: 'Herramientas para ceremonias de scrum poker planning y retrospective.',
         Description: 'Realizada en Angular para desktop. Está conectada a una base de datos externa para el almacenamiento de información, lo que posibilita su uso desde cualquier dispositivo ingresando con nombre de usuario y contraseña.',
@@ -69,7 +90,7 @@ export const ProjectsService = {
         if(Projects.length <= 3) {
             return Projects
         } else {
-            return Projects.slice(3, Projects.length-1);
+            return Projects.slice(0, 3);
         }
       },
     getProyect(id) {
