@@ -49,12 +49,14 @@
     color:white;
     text-decoration:none;
   }
-  a:hover {
-      color:#5E35B1;
-  }
   .selectedIndex {
     color:#5E35B1;
     font-weight:bold;
     font-size: larger;
+  }
+  @media (min-width: 500px) {
+    a:hover {
+      color:#5E35B1;
+  }
   }
 </style>

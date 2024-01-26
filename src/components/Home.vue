@@ -125,7 +125,7 @@
   
 <script setup>
   import { useRouter } from 'vue-router';
-  import { ref, onMounted } from 'vue';
+  import { ref, onMounted, onUnmounted } from 'vue';
   import { ProjectsService } from '../services/ProjectsService.js';
   import { useAppStore } from '../store/app'
 
@@ -140,6 +140,19 @@
   const mobile = ref(Boolean)
 
   //Functions
+     const scrolling = (e) => {
+      
+      const el = e.target.documentElement;
+      const contact = el.clientHeight + el.scrollTop > el.scrollHeight*0.75;
+      const home = el.clientHeight + el.scrollTop < el.scrollHeight*0.5;
+      if (contact && (index.index != 'contact')) {
+        changeIndex('contact')
+      }
+      if (home && (index.index != 'home')) {
+        changeIndex('home')
+      }
+
+   }
   const changeIndex = (newIndex) => { index.change(newIndex) }
   const navigate = (url) => {
     router.push('/' + url);
@@ -164,6 +177,7 @@
   //Hooks
   onMounted(
         () => {
+          window.addEventListener("scroll", scrolling)
           if(Number(screen.width) <= 500) {
                 height.value = 'auto';
                 icon.value = 'mdi-eye'
@@ -174,6 +188,11 @@
                 mobile.value = false;
             }
           getProjects()
+        } 
+    )
+    onUnmounted(
+        () => {
+          window.removeEventListener("scroll", scrolling)
         } 
     )
 </script>
