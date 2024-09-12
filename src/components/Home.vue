@@ -221,7 +221,8 @@
   }
   #home-section{
     background-image: url('../assets/backgrounds/22.png');
-    background-size: 85vw 100vh;
+    background-size: auto 100vh;
+    overflow: hidden;
   }
   #myself-text-div {
     padding: 0px;
@@ -347,6 +348,26 @@
     .section {
       width: 100vw;
       height: fit-content;
+    }
+  }
+  
+  @media (min-width: 501px) and (max-width: 1100px) {
+    #home-section{
+      padding-top: 50vh;
+    }
+    .myself-div {
+      padding-right: 10vw;
+    }
+    h1{
+    font-size: 45px;
+    }
+    h2 {
+      font-size: 40px;
+    }
+    h3 {
+      font-size: 35px;
+      font-weight: lighter;
+      font-style: italic;
     }
   }
 </style>
