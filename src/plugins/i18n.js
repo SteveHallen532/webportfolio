@@ -55,7 +55,7 @@ export const i18n = createI18n({
                         Description: 'Desktop app built in Angular. It is connected to an external database through an API for information storage, which makes it possible to use it from any device by logging in with a username and password.',
                     },
                     5: {
-                        Title: 'CanCian Landing',
+                        Title: 'Cancian Landing',
                         Subtitle: 'Landing page dedicated to advertise lots of land for sale.',
                         Description: 'Built in Angular, 100% responsive. It is connected to an external database through an API for information request.',
                     },
