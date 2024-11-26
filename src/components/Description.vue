@@ -9,11 +9,11 @@
                 <div v-if="project.Url">
                     <h3>Dale un vistazo!</h3>
                     <p>Url: <a :href="getUrl()">{{ project.Url }}</a></p>
-                    <p v-if="project.User">User: {{ project.User }}</p>
-                    <p v-if="project.Pass">Password: {{ project.Pass }}</p>
+                    <p v-if="project.User">{{ $t('message.description.user')+ ': ' + project.User }}</p>
+                    <p v-if="project.Pass">{{$t('message.description.password')+ ': ' +  project.Pass }}</p>
                 </div>
-                <v-btn v-if="!mobile && hasImg('MovileImgs')" class="dark mt-16 mr-4" @click="navigate('gallery?id=' + project.id + '&size=MovileImgs')">Galería MOBILE</v-btn>
-                <v-btn v-if="!mobile && hasImg('DeskTopImgs')" class="dark mt-16" @click="navigate('gallery?id=' + project.id + '&size=DeskTopImgs')">Galeria DESKTOP</v-btn>
+                <v-btn v-if="!mobile && hasImg('MovileImgs')" class="dark mt-16 mr-4" @click="navigate('gallery?id=' + project.id + '&size=MovileImgs')">{{ $t('message.buttons.gallery', {type: 'MOBILE'}) }}</v-btn>
+                <v-btn v-if="!mobile && hasImg('DeskTopImgs')" class="dark mt-16" @click="navigate('gallery?id=' + project.id + '&size=DeskTopImgs')">{{ $t('message.buttons.gallery', {type: 'DESKTOP'}) }}</v-btn>
             </v-col>
             <v-col cols="12" md="6" class="pt-0 pb-8">
 
@@ -33,10 +33,10 @@
 
             </v-col>
             <v-col v-if="mobile && hasImg('MovileImgs')" cols="6" class="text-center">
-                <v-btn class="dark" @click="navigate('gallery?id=' + project.id + '&size=MovileImgs')">Galería MOBILE</v-btn>
+                <v-btn class="dark" @click="navigate('gallery?id=' + project.id + '&size=MovileImgs')">{{ $t('message.buttons.gallery', {type: 'MOBILE'}) }}</v-btn>
             </v-col>
             <v-col v-if="mobile && hasImg('DeskTopImgs')" cols="6" class="text-center">
-                <v-btn class="dark" @click="navigate('gallery?id=' + project.id + '&size=DeskTopImgs')">Galeria DESKTOP</v-btn>
+                <v-btn class="dark" @click="navigate('gallery?id=' + project.id + '&size=DeskTopImgs')">{{ $t('message.buttons.gallery', {type: 'DESKTOP'}) }}</v-btn>
             </v-col>
         </v-row>
     </v-container>

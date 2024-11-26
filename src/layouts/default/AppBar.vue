@@ -5,38 +5,56 @@
     <v-spacer></v-spacer>
     <ul>
       <li>
-        <router-link :to="{name: 'Home', hash: '#home-section'}" :class="{ selectedIndex: index.index == 'home' }" @click="changeIndex('home')" >Home</router-link>
+        <router-link :to="{name: 'Home', hash: '#home-section'}" :class="{ selectedIndex: index.index == 'home' }" @click="changeIndex('home')" >{{ $t('message.appBar.home') }}</router-link>
       </li>
       <li>
-        <router-link to="/portfolio" :class="{ selectedIndex: index.index == 'portfolio' }" @click="changeIndex('portfolio')">Portfolio</router-link>
+        <router-link to="/portfolio" :class="{ selectedIndex: index.index == 'portfolio' }" @click="changeIndex('portfolio')">{{ $t('message.appBar.portfolio') }}</router-link>
       </li>
       <li>
-        <router-link :to="{name: 'Home', hash: '#contact-section'}" :class="{ selectedIndex: index.index == 'contact' }" @click="changeIndex('contact')">Contacto</router-link>
+        <router-link :to="{name: 'Home', hash: '#contact-section'}" :class="{ selectedIndex: index.index == 'contact' }" @click="changeIndex('contact')">{{ $t('message.appBar.contact') }}</router-link>
       </li>
     </ul>
+    <div class="locale-changer ms-5 me-2">
+      <v-icon
+        color="white"
+        icon="mdi-translate"
+        size="small"
+      ></v-icon>
+      <select v-model="$i18n.locale" @change="onLocaleChange($i18n.locale)">
+        <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
+      </select>
+    </div>
   </v-app-bar>
 </template>
 
 <script setup>
-  import { useAppStore } from '../../store/app'
+  import { useAppStore } from '../../store/app';
 
-  //global variables
+  // Global variables
   const index = useAppStore();
-  //internal variables
-  
-  //functions
-  const changeIndex = (newIndex) => { index.change(newIndex) }
+
+  // Internal variables
+
+  // Functions
+  const changeIndex = (newIndex) => {
+    index.change(newIndex);
+  };
+
+  // Persist language on change
+  const onLocaleChange = (value) => {
+    localStorage.setItem('locale', value);  // Guardar en localStorage
+  };
 
   window.onpopstate = function () {
-      let href = document.location.href;
-      if(href.includes('contact')) {
-        changeIndex('contact')
-      } else if(href.includes('portfolio') || href.includes('description') || href.includes('gallery')) {
-        changeIndex('portfolio')
-      } else {
-        changeIndex('home')
-      }
+    let href = document.location.href;
+    if (href.includes('contact')) {
+      changeIndex('contact');
+    } else if (href.includes('portfolio') || href.includes('description') || href.includes('gallery')) {
+      changeIndex('portfolio');
+    } else {
+      changeIndex('home');
     }
+  };
 </script>
 
 <style scoped>
@@ -48,6 +66,21 @@
   a {
     color:white;
     text-decoration:none;
+  }
+  select{
+    color: white;
+    background-color: transparent;
+    padding: 3px;
+    margin: auto 5px auto 5px;
+  }
+  select:hover{
+    cursor: pointer;
+  }
+  select:focus{
+    outline: none;
+  }
+  select option {
+    background-color: #bbb2cb;
   }
   .selectedIndex {
     color:#5E35B1;

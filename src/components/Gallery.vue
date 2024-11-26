@@ -9,7 +9,7 @@
 
                     <v-dialog width="auto">
                         <template v-slot:activator="{ props }">
-                                <img v-bind="props" class="img-btn" :src="getImgUrl(index)" @click="setCarousellIndex(index)" alt="Imagen del proyecto">
+                            <img v-bind="props" class="img-btn" :src="getImgUrl(index)" @click="setCarousellIndex(index)" :alt="$t('message.gallery.alt')">
                         </template>
 
                         <template v-slot:default="{ isActive }">

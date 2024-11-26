@@ -5,11 +5,10 @@
               <v-row>
                   <v-col cols="12" lg="9" xl="8" offset-lg="3" class="text-right myself">
                       <div id="myself-text-div">
-                          <h2 class="text-right">Hola, soy <b class="purple-text">Virginia Yerien.</b></h2>
-                          <h1>Desarrolladora Front-end.</h1> 
-                            <p id="myself-paragraph" class="paragraph">Me dedico al desarrollo de aplicaciones 
-                              y páginas web del lado del cliente. Las tecnologías que más utilizo son HTML, CSS, JS, Typescript, Angular y Vue.</p>
-                            <v-btn variant="outlined" id="btn-cv" class="light mt-2 mt-lg-16" @click="downloadPdf('../assets/CV/CV-VirginiaYerien.pdf')">Descargar CV</v-btn>
+                          <h2 class="text-right">{{ $t('message.home.title') }} <b class="purple-text">Virginia Yerien,</b></h2>
+                          <h1>{{ $t('message.home.title2') }}</h1> 
+                            <p id="myself-paragraph" class="paragraph">{{ $t('message.home.p') }}</p>
+                            <v-btn variant="outlined" id="btn-cv" class="light mt-2 mt-lg-16" @click="downloadPdf('../assets/CV/CV-VirginiaYerien.pdf')">{{ $t('message.home.resumeBtn') }}</v-btn>
                       </div>
                   </v-col>
               </v-row>
@@ -22,10 +21,10 @@
               <v-row>
                 <v-col cols="12" md="6" xl="4" offset-xl="1" class="text-left">
                   <div id="portfolio-text-div">
-                    <h2>Aplicaciones y páginas web completamente responsivas</h2>
-                    <p class="paragraph text-left">Creo soluciones a medida con diseños adaptables a una gran variedad de dispositivos. Mi objetivo es entregar productos con buena usabilidad y agradables al uso.</p>
-                    <p class="paragraph text-left ">Estos son algunos de mis trabajos.</p>
-                    <v-btn id="btn-portfolio-all" variant="outlined" class="light d-none d-lg-block mt-11 mt-xl-9" @click="navigate('portfolio'), changeIndex('portfolio')">VER PORTFOLIO COMPLETO</v-btn>
+                    <h2>{{ $t('message.home.portfolioTitle') }}</h2>
+                    <p class="paragraph text-left">{{ $t('message.home.portfolioP') }}</p>
+                    <p class="paragraph text-left ">{{ $t('message.home.portfolioP2') }}</p>
+                    <v-btn id="btn-portfolio-all" variant="outlined" class="light d-none d-lg-block mt-11 mt-xl-9" @click="navigate('portfolio'), changeIndex('portfolio')">{{ $t('message.home.portfolioBtn') }}</v-btn>
                   </div>
                   
                 </v-col>
@@ -43,14 +42,14 @@
                       cover
                       >
                         <v-btn v-if="mobile" class="dark dark-carousel-btn-mobile" size="large" :icon="icon" @click="navigate('description?id=' + item.id), changeIndex('portfolio')"></v-btn>
-                        <v-btn v-if="!mobile" class="btn-portfolio dark dark-carousel-btn-desk"  :text="text" @click="navigate('description?id=' + item.id), changeIndex('portfolio')"></v-btn>
+                        <v-btn v-if="!mobile" class="btn-portfolio dark dark-carousel-btn-desk"  :text="$t('message.home.detailsBtn')" @click="navigate('description?id=' + item.id), changeIndex('portfolio')"></v-btn>
                       </v-carousel-item>
                     </v-carousel>
 
                   </v-col>
 
                   <v-col cols="12" class="pt-0 pb-16 pb-lg-0">
-                    <v-btn id="btn-portfolio-all2" variant="outlined" class="light d-inline d-lg-none" @click="navigate('portfolio'), changeIndex('portfolio')">VER PORTFOLIO COMPLETO</v-btn>
+                    <v-btn id="btn-portfolio-all2" variant="outlined" class="light d-inline d-lg-none" @click="navigate('portfolio'), changeIndex('portfolio')">{{ $t('message.home.portfolioBtn') }}</v-btn>
                   </v-col>
               </v-row>
               </v-responsive>
@@ -62,12 +61,12 @@
               <v-responsive class="align-center text-center">
               <v-row>
                   <v-col cols="12" class="pb-0">
-                    <h2>Trabajemos juntos!!</h2>
-                    <h3>Hagamos que tus ideas se hagan realidad.</h3>
+                    <h2>{{ $t('message.contact.title') }}</h2>
+                    <h3>{{ $t('message.contact.subtitle') }}</h3>
                   </v-col>
                   
                   <v-col cols="12" lg="6" xl="4" offset-xl="2" class="py-0 py-lg-3">
-                    <p class="paragraph pb-0 pb-lg-3">Dejame un mensaje...</p>
+                    <p class="paragraph pb-0 pb-lg-3">{{ $t('message.contact.p') }}</p>
                     <v-sheet class="mx-auto background-transparent">
                       <v-form fast-fail action="https://formsubmit.co/virginiayer@gmail.com" method="POST">
 
@@ -75,7 +74,7 @@
                           variant="outlined"
                           name="name"
                         
-                          label="Nombre"
+                          :label="$t('message.contact.placeholderName')"
                         
                         ></v-text-field>
 
@@ -91,14 +90,14 @@
                           variant="outlined"
                           name="msg"
                         
-                          label="Mensaje"
+                          :label="$t('message.contact.placeholderMessage')"
                       
                         ></v-textarea>
 
-                        <v-btn type="submit" block class="mt-2 btn-portfolio dark">Enviar</v-btn>
+                        <v-btn type="submit" block class="mt-2 btn-portfolio dark">{{ $t('message.contact.btn') }}</v-btn>
 
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_cc" value="virginiayer.test@gmail.com">
+                        <input type="hidden" name="_cc" value="virginiayer@gmail.com">
                         <input type="hidden" name="_next" value="http://127.0.0.1:3000/success">
                       </v-form>
                     </v-sheet>
@@ -106,7 +105,7 @@
 
                   <v-col cols="12" lg="6" xl="4" class="py-0 py-lg-3">
                     <v-col cols="12" class="mb-16 pb-16">
-                      <p class="paragraph pb-0 pb-lg-3">...Y seguime en:</p>
+                      <p class="paragraph pb-0 pb-lg-3">{{ $t('message.contact.p2') }}</p>
                       <a href="https://linkedin.com/in/virginia-yerien">
                         <v-btn class="mx-5 btn-icon" icon="mdi-linkedin" elevation="16" size="x-large"></v-btn>
                       </a>
@@ -135,7 +134,6 @@
   const projects = ref({});
   const loading = ref(true);
   const height = ref('');
-  const text = ref('');
   const icon = ref('');
   const mobile = ref(Boolean)
 
@@ -184,7 +182,6 @@
                 mobile.value = true;
             } else if(Number(screen.width) > 500) {
                 height.value = '500';
-                text.value = 'VER DETALLES'
                 mobile.value = false;
             }
           getProjects()
