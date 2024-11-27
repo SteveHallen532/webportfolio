@@ -124,7 +124,7 @@
   
 <style scoped>
 p{
-    font-weight: lighter;
+    font-weight: 300;
 }
 .DeskTopImgs{
     width: 1100px;

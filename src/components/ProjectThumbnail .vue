@@ -67,7 +67,7 @@ p{
     visibility:hidden;
     opacity:0;
     transition:visibility 0.5s, opacity 0.5s;
-    font-weight: lighter;
+    font-weight: 300;
 }
 .dark{
     display:block; 

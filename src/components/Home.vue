@@ -1,32 +1,31 @@
 <template>
     <div v-if="!loading">
-      <section id="home-section" class="section">
-          <v-container class="align-center text-center myself-div">
-              <v-row>
-                  <v-col cols="12" lg="9" xl="8" offset-lg="3" class="text-right myself">
-                      <div id="myself-text-div">
-                          <h2 class="text-right">{{ $t('message.home.title') }} <b class="purple-text">Virginia Yerien,</b></h2>
-                          <h1>{{ $t('message.home.title2') }}</h1> 
-                            <p id="myself-paragraph" class="paragraph">{{ $t('message.home.p') }}</p>
-                            <v-btn variant="outlined" id="btn-cv" class="light mt-2 mt-lg-16" @click="downloadPdf('../assets/CV/CV-VirginiaYerien.pdf')">{{ $t('message.home.resumeBtn') }}</v-btn>
-                      </div>
+      <section id="home-section" class="px-3 px-sm-5 d-flex align-center section">
+          <v-container class="text-center">
+              <v-row class="pt-3">
+                  <v-col cols="12" sm="4" offset-xl="1">
+                    <img id="myselfImg" src="../../public/assets/backgrounds/673dccba38310bab0a441d906b97353f2.png" alt="picture of myself">
+                  </v-col>
+                  <v-col cols="12" sm="8" xl="5" offset-xl="1" class="text-center text-sm-right">
+                    <h2>{{ $t('message.home.title') }} <b class="purple-text">Virginia Yerien,</b></h2>
+                    <h1 id="home-title-2">{{ $t('message.home.title2') }}</h1> 
+                    <p class="paragraph py-2 py-sm-16 pt-lg-10 mb-3">{{ $t('message.home.p') }}</p>
+                    <v-btn variant="outlined" id="btn-cv" class="light  mb-4" @click="downloadPdf('../assets/CV/CV-VirginiaYerien.pdf')">{{ $t('message.home.resumeBtn') }}</v-btn>
                   </v-col>
               </v-row>
           </v-container>
       </section>
 
-      <section id="portfolio-section" class="section">
+      <section id="portfolio-section" class="px-3 px-sm-5 d-flex align-center section">
           <v-container class="fill-height">
               <v-responsive class="align-center text-center">
               <v-row>
                 <v-col cols="12" md="6" xl="4" offset-xl="1" class="text-left">
-                  <div id="portfolio-text-div">
-                    <h2>{{ $t('message.home.portfolioTitle') }}</h2>
-                    <p class="paragraph text-left">{{ $t('message.home.portfolioP') }}</p>
-                    <p class="paragraph text-left ">{{ $t('message.home.portfolioP2') }}</p>
-                    <v-btn id="btn-portfolio-all" variant="outlined" class="light d-none d-lg-block mt-11 mt-xl-9" @click="navigate('portfolio'), changeIndex('portfolio')">{{ $t('message.home.portfolioBtn') }}</v-btn>
-                  </div>
-                  
+                  <h2 class="pb-5">{{ $t('message.home.portfolioTitle') }}</h2>
+                  <p class="paragraph text-left">{{ $t('message.home.portfolioP') }}</p>
+                  <p class="paragraph text-left pb-5">{{ $t('message.home.portfolioP2') }}</p>
+                  <v-btn id="btn-portfolio-all" variant="outlined" class="light d-none d-lg-block mt-11 mt-xl-9" @click="navigate('portfolio'), changeIndex('portfolio')">{{ $t('message.home.portfolioBtn') }}</v-btn>
+                
                 </v-col>
 
                   <v-col cols="12" md="6" xl="6" class="pt-0 pb-8">
@@ -56,7 +55,7 @@
           </v-container>
       </section>
 
-      <section id="contact-section" class="section">
+      <section id="contact-section" class="section px-3 px-sm-5 pt-10 pt-sm-5 d-flex align-center">
           <v-container class="fill-height">
               <v-responsive class="align-center text-center">
               <v-row>
@@ -65,8 +64,8 @@
                     <h3>{{ $t('message.contact.subtitle') }}</h3>
                   </v-col>
                   
-                  <v-col cols="12" lg="6" xl="4" offset-xl="2" class="py-0 py-lg-3">
-                    <p class="paragraph pb-0 pb-lg-3">{{ $t('message.contact.p') }}</p>
+                  <v-col cols="12" lg="6" xl="4" offset-xl="2" class="mt-3 py-0 py-lg-3">
+                    <p class="paragraph pb-1 pb-lg-3">{{ $t('message.contact.p') }}</p>
                     <v-sheet class="mx-auto background-transparent">
                       <v-form fast-fail action="https://formsubmit.co/virginiayer@gmail.com" method="POST">
 
@@ -105,7 +104,7 @@
 
                   <v-col cols="12" lg="6" xl="4" class="py-0 py-lg-3">
                     <v-col cols="12" class="mb-16 pb-16">
-                      <p class="paragraph pb-0 pb-lg-3">{{ $t('message.contact.p2') }}</p>
+                      <p class="paragraph pb-1 pb-lg-3">{{ $t('message.contact.p2') }}</p>
                       <a href="https://linkedin.com/in/virginia-yerien">
                         <v-btn class="mx-5 btn-icon" icon="mdi-linkedin" elevation="16" size="x-large"></v-btn>
                       </a>
@@ -207,37 +206,23 @@
     font-style: italic;
   }
   p {
-    font-weight: lighter;
+    font-weight: 300;
   }
   #btn-cv {
     height: 6vh;
   }
   #contact-section{
-    background: url('../assets/backgrounds/20.png');
-    background-size: 100vw 100vh;
+    background-image: url('../assets/backgrounds/fondo2.png');
   }
   #home-section{
-    background-image: url('../assets/backgrounds/22.png');
-    background-size: auto 100vh;
-    overflow: hidden;
+    background-image: url('../assets/backgrounds/fondo.png');
   }
-  #myself-text-div {
-    padding: 0px;
-    height: 50vh;
-  }
-  #myself-paragraph {
-    padding-left: 8vw;
+  #myselfImg{
+    width: 100%;
+    border-radius: 50%;
   }
   #portfolio-section {
-    background-color: #f2f0f7;
-  }
-  #portfolio-text-div {
-    height: 100%;
-    padding-right: 30px;
-  }
-  .myself {
-    padding: 0;
-    height: 40vh;
+    background-image: url('../assets/backgrounds/fondo3.png');
   }
   .dark-carousel-btn-desk{
     width: fit-content;
@@ -257,22 +242,18 @@
     padding: 5px;
     margin-top: 400px;
   }
-  .myself-div {
-    height: 55vh;
-    width: 100vw;
-    display: flex;
-    align-content: center;
-  } 
   .paragraph {
-    padding-top: 30px;
     font-size: 20px;
   }
   .section {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    background-size: cover;                
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     h1{
     font-size: 30px;
     }
@@ -287,34 +268,18 @@
     p {
       transform: scale(0.9);
     }
-    #contact-section{
-      height: 125vh;
-      background-size: 100vw 130vh;
-      padding-top: 5px;
-    }
     #home-section{
-      height: 65vh;
-      background-image: url('../assets/backgrounds/24.png');
-      background-size: 100vw 65vh;
-      padding-top: 50px;
+      background-image: url('../assets/backgrounds/fondoMobile.png');
     }
-    #myself-text-div {
-      height: fit-content;
+    #contact-section{
+      background-image: url('../assets/backgrounds/fondoMobile2.png');
     }
-    #myself-paragraph {
-      padding-bottom: 25px;
+    #myselfImg{
+      width: 65%;
     }
     #portfolio-section {
       padding-top: 40px;
-      background-color: #f2f0f7;
-    }
-    #portfolio-text-div {
-      height: 62vh;
-      padding-right: 30px;
-    }
-    .myself {
-      padding: 0px;
-      height: fit-content;
+      background-color: #f6f3fb;
     }
     .btn-portfolio{
       padding: 5px;
@@ -329,16 +294,6 @@
       top: 2px;
       right: 2px;
     }
-    .myself-div {
-      height: 55vh;
-      width: 100vw;
-      display: flex;
-      align-content: center;
-    } 
-    .paragraph {
-      padding-top: 30px;
-      font-size: 20px;
-    }
     .purple-text {
       color:#5E35B1;
     }
@@ -348,12 +303,16 @@
     }
   }
   
-  @media (min-width: 501px) and (max-width: 1100px) {
-    #home-section{
-      padding-top: 50vh;
+  @media (min-width: 601px) and (max-width: 1100px) {
+    #home-title-2{
+      font-size: 30px;
     }
-    .myself-div {
-      padding-right: 10vw;
+    #home-section{
+      height: 100vh;
+      background-image: url('../assets/backgrounds/fondoMobile.png');
+    }
+    #contact-section{
+      background-image: url('../assets/backgrounds/fondoMobile2.png');
     }
     h1{
     font-size: 45px;

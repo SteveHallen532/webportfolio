@@ -1,7 +1,7 @@
 <template>
     <v-container v-if="!loading">
         <v-row>
-            <v-col v-for="(item, index) in projects" :key="index" cols="12" md="4" xl="3" class="mb-10 mb-lg-0">
+            <v-col v-for="(item, index) in projects" :key="index" cols="12" sm="6" lg="4" xl="3" class="mb-10 mb-lg-1 d-flex justify-center">
                 <ProjectThumbnail :url="'description?id=' + item.id" :title="item.Title" :description="item.Subtitle" :imgUrl="getImgUrl(index)" />
             </v-col>
         </v-row>
@@ -10,7 +10,7 @@
   
 <script setup>
     import { ref, onMounted } from 'vue'
-    import ProjectThumbnail from './ProjectThumbnail .vue'
+    import ProjectThumbnail from './ProjectThumbnail.vue'
     import { ProjectsService } from '../services/ProjectsService.js'
 
     //Consts
@@ -21,6 +21,7 @@
     onMounted(
         () => {
             getProjects();
+            scrollToTop()
         } 
     )
 
@@ -32,6 +33,9 @@
         projects.value = ProjectsService.getProyectsList();
         loading.value = false
     } 
+    const scrollToTop = () => {
+        window.scrollTo(0,0);
+    }
 </script>
   
 <style scoped>

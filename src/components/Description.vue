@@ -111,7 +111,7 @@
   
 <style scoped>
 p{
-    font-weight: lighter;
+    font-weight: 300;
 }
 .carousel{
     width: 60vw;
