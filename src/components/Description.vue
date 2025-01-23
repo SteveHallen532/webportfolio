@@ -7,7 +7,7 @@
                 <p>{{ project.Description }}</p>
                 <br>
                 <div v-if="project.Url">
-                    <h3>Dale un vistazo!</h3>
+                    <h3 >{{$t('message.description.text')}}</h3>
                     <p>Url: <a :href="getUrl()">{{ project.Url }}</a></p>
                     <p v-if="project.User">{{ $t('message.description.user')+ ': ' + project.User }}</p>
                     <p v-if="project.Pass">{{$t('message.description.password')+ ': ' +  project.Pass }}</p>

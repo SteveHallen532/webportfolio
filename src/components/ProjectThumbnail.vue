@@ -5,7 +5,7 @@
         <img :src=imgUrl alt="foto del proyecto">
         <h3 v-if="!mobile" class="text-center">{{ title }}</h3>
         <p class="text-center">{{ description }}</p>
-        <v-btn class="dark" @click="navigate(url)">VER DETALLES</v-btn>
+        <v-btn class="dark" @click="navigate(url)" :text="$t('message.home.detailsBtn')"></v-btn>
     </div>
 </template>
   

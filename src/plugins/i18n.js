@@ -27,7 +27,7 @@ export const i18n = createI18n({
                 contact: {
                     title: 'Let\'s work together!!',
                     subtitle: 'And make your ideas come true.',
-                    p: 'Leave a message...',
+                    p: 'Drop a message...',
                     p2: '...And follow me:',
                     btn: 'Send',
                     placeholderName: 'Name',
@@ -63,6 +63,7 @@ export const i18n = createI18n({
                 description: {
                     user: 'User',
                     password: 'Password',
+                    text: 'Take a look!'
                 },
                 gallery: {
                     alt: 'Picture of the proyect'
@@ -131,6 +132,7 @@ export const i18n = createI18n({
                 description: {
                     user: 'Usuario',
                     password: 'Contraseña',
+                    text: 'Dale un vistazo!'
                 },
                 gallery: {
                     alt: 'Imagen del proyecto'
